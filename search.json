@@ -1,0 +1,18 @@
+---
+layout: null
+---
+[
+  {% for post in site.posts %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "date": {{ post.date | date: "%d/%m/%Y" | jsonify }},
+    "journal": {{ post.journal | default: "" | jsonify }},
+    "doi": {{ post.doi | default: "" | jsonify }},
+    "categories": {{ post.categories | jsonify }},
+    "tags": {{ post.tags | jsonify }},
+    "authors": {{ post.authors | default: "" | jsonify }},
+    "excerpt": {{ post.content | strip_html | strip_newlines | truncate: 220 | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

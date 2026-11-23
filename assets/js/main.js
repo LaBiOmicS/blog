@@ -1,5 +1,5 @@
 // ==========================================================================
-// LaBiOmicS · Blog & Radar Científico - Scripts
+// LaBiOmicS · Blog & Radar Científico - Scripts & Motor de Busca
 // ==========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,24 +41,155 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Filtro dinâmico de categorias na página inicial
+  // 3. Motor de Busca de Artigos em Tempo Real
+  const searchInput = document.getElementById("blog-search-input");
+  const postsContainer = document.getElementById("posts-container");
+  const paginationNav = document.getElementById("pagination-nav");
+  const searchFeedback = document.getElementById("search-feedback");
   const filterBtns = document.querySelectorAll(".filter-btn");
-  const postCards = document.querySelectorAll(".post-card");
 
-  if (filterBtns.length > 0 && postCards.length > 0) {
+  let allPostsIndex = null;
+  let defaultPostsHTML = postsContainer ? postsContainer.innerHTML : "";
+
+  // Atalho de teclado '/' para focar a busca
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "/" && document.activeElement !== searchInput && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+      e.preventDefault();
+      if (searchInput) {
+        searchInput.focus();
+      }
+    } else if (e.key === "Escape" && document.activeElement === searchInput) {
+      searchInput.value = "";
+      restoreDefaultView();
+    }
+  });
+
+  // Carrega o índice search.json sob demanda
+  const loadSearchIndex = async () => {
+    if (allPostsIndex) return allPostsIndex;
+    try {
+      const baseUrl = (document.querySelector('meta[name="baseurl"]') || {}).content || "";
+      const res = await fetch(`${baseUrl}/search.json`);
+      if (res.ok) {
+        allPostsIndex = await res.json();
+      }
+    } catch (err) {
+      console.warn("Falha ao carregar índice de busca:", err);
+    }
+    return allPostsIndex || [];
+  };
+
+  const renderSearchResults = (results, query) => {
+    if (!postsContainer) return;
+
+    if (results.length === 0) {
+      postsContainer.innerHTML = `
+        <div class="empty-state" style="grid-column: 1 / -1; padding: 48px 0; text-align: center;">
+          <p style="font-size: 1.1rem; color: var(--muted); margin-bottom: 12px;">Nenhum artigo encontrado para "<strong>${escapeHtml(query)}</strong>".</p>
+          <button type="button" class="btn-clear-search" id="btn-clear-search">Limpar busca</button>
+        </div>
+      `;
+    } else {
+      postsContainer.innerHTML = results.map(post => `
+        <article class="post-card" data-categories="${(post.categories || []).join(' ')}" data-tags="${(post.tags || []).join(' ')}">
+          <div class="post-card-top">
+            <div class="post-badges">
+              ${post.journal ? `<span class="badge badge-journal">${escapeHtml(post.journal)}</span>` : ""}
+              ${(post.categories || []).map(cat => `<span class="badge badge-category">${escapeHtml(cat)}</span>`).join("")}
+            </div>
+            <h2 class="post-card-title">
+              <a href="${post.url}">${escapeHtml(post.title)}</a>
+            </h2>
+            <p class="post-card-excerpt">${escapeHtml(post.excerpt)}</p>
+          </div>
+          <div class="post-card-meta">
+            <div class="post-date-read">
+              <span>📅 ${post.date}</span>
+            </div>
+            <a class="post-card-link" href="${post.url}">Ler síntese <span>→</span></a>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    if (searchFeedback) {
+      searchFeedback.style.display = "flex";
+      searchFeedback.innerHTML = `
+        <span>Mostrando <strong>${results.length}</strong> ${results.length === 1 ? 'artigo encontrado' : 'artigos encontrados'} para "<strong>${escapeHtml(query)}</strong>"</span>
+        <button type="button" class="btn-clear-search-link" id="btn-clear-search-link">✕ Limpar</button>
+      `;
+
+      const clearBtn = document.getElementById("btn-clear-search-link");
+      if (clearBtn) clearBtn.addEventListener("click", () => {
+        if (searchInput) searchInput.value = "";
+        restoreDefaultView();
+      });
+    }
+
+    const clearBtnEmpty = document.getElementById("btn-clear-search");
+    if (clearBtnEmpty) clearBtnEmpty.addEventListener("click", () => {
+      if (searchInput) searchInput.value = "";
+      restoreDefaultView();
+    });
+
+    if (paginationNav) {
+      paginationNav.style.display = "none";
+    }
+  };
+
+  const restoreDefaultView = () => {
+    if (postsContainer) postsContainer.innerHTML = defaultPostsHTML;
+    if (paginationNav) paginationNav.style.display = "flex";
+    if (searchFeedback) searchFeedback.style.display = "none";
+    attachCardListeners();
+  };
+
+  const escapeHtml = (str) => {
+    if (!str) return "";
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  };
+
+  if (searchInput) {
+    // Pré-carrega índice no foco
+    searchInput.addEventListener("focus", () => { loadSearchIndex(); });
+
+    searchInput.addEventListener("input", async (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      if (!q) {
+        restoreDefaultView();
+        return;
+      }
+
+      const posts = await loadSearchIndex();
+      const filtered = posts.filter(p => {
+        const titleMatch = (p.title || "").toLowerCase().includes(q);
+        const excerptMatch = (p.excerpt || "").toLowerCase().includes(q);
+        const journalMatch = (p.journal || "").toLowerCase().includes(q);
+        const authorMatch = (p.authors || "").toLowerCase().includes(q);
+        const doiMatch = (p.doi || "").toLowerCase().includes(q);
+        const tagMatch = (p.tags || []).some(t => t.toLowerCase().includes(q));
+        const catMatch = (p.categories || []).some(c => c.toLowerCase().includes(q));
+
+        return titleMatch || excerptMatch || journalMatch || authorMatch || doiMatch || tagMatch || catMatch;
+      });
+
+      renderSearchResults(filtered, e.target.value.trim());
+    });
+  }
+
+  // 4. Filtro por botões de categorias
+  const attachCardListeners = () => {
+    const cards = document.querySelectorAll(".post-card");
     filterBtns.forEach(btn => {
       btn.addEventListener("click", () => {
-        // Atualiza estado ativo do botão
         filterBtns.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
 
-        const selectedCategory = btn.getAttribute("data-filter");
-
-        postCards.forEach(card => {
-          const cardCategories = (card.getAttribute("data-categories") || "").toLowerCase();
-          const cardTags = (card.getAttribute("data-tags") || "").toLowerCase();
-          
-          if (selectedCategory === "all" || cardCategories.includes(selectedCategory.toLowerCase()) || cardTags.includes(selectedCategory.toLowerCase())) {
+        const selected = btn.getAttribute("data-filter");
+        cards.forEach(card => {
+          const cats = (card.getAttribute("data-categories") || "").toLowerCase();
+          const tags = (card.getAttribute("data-tags") || "").toLowerCase();
+          if (selected === "all" || cats.includes(selected.toLowerCase()) || tags.includes(selected.toLowerCase())) {
             card.style.display = "flex";
           } else {
             card.style.display = "none";
@@ -66,5 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     });
-  }
+  };
+
+  attachCardListeners();
 });

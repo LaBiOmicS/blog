@@ -25,8 +25,8 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-# Paginação de 10 em 10 artigos
-paginate: 10
+# Paginação de 12 em 12 artigos (3 por linha)
+paginate: 12
 paginate_path: "/page:num/"
 
 # Plugins suportados nativamente pelo GitHub Pages
