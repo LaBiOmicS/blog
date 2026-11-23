@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-pill">
+      Radar Científico LaBiOmicS · Atualização Contínua
+    </div>
+    <h1 class="hero-title">
+      Fronteiras da Bioinformática & Ciências Ômicas
+    </h1>
+    <p class="hero-desc">
+      Artigos de alto impacto selecionados de periódicos líderes mundiais, analisados e sintetizados em português com foco em inovações metodológicas e biológicas.
+    </p>
+
+    <!-- Barra de Filtros Rápidos -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="metagenomica">Metagenômica</button>
+      <button class="filter-btn" data-filter="genomica">Genômica</button>
+      <button class="filter-btn" data-filter="transcriptomica">Transcriptômica</button>
+      <button class="filter-btn" data-filter="ia">IA & Bioinformática</button>
+      <button class="filter-btn" data-filter="microbioma">Microbioma</button>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="posts-grid" id="posts-container">
+    {% for post in site.posts %}
+      <article class="post-card" 
+               data-categories="{{ post.categories | join: ' ' }}" 
+               data-tags="{{ post.tags | join: ' ' }}">
+        <div class="post-card-top">
+          <div class="post-badges">
+            {% if post.journal %}
+              <span class="badge badge-journal">{{ post.journal }}</span>
+            {% endif %}
+            {% if post.categories.first %}
+              <span class="badge badge-category">{{ post.categories.first }}</span>
+            {% endif %}
+          </div>
+          
+          <h2 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          
+          <p class="post-card-excerpt">
+            {{ post.excerpt | strip_html | strip_newlines | truncate: 170 }}
+          </p>
+        </div>
+
+        <div class="post-card-meta">
+          <span>📅 {{ post.date | date: "%d/%m/%Y" }}</span>
+          <a class="post-card-link" href="{{ post.url | relative_url }}">
+            Ler síntese →
+          </a>
+        </div>
+      </article>
+    {% else %}
+      <div style="grid-column: 1 / -1; padding: 48px 0; text-align: center; color: var(--muted);">
+        <p style="font-size: 1.1rem;">Nenhum artigo publicado ainda. O robô curador começará a publicar em breve!</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

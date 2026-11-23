@@ -1,0 +1,20 @@
+{
+  "processed_dois": [
+    "10.1038/s41467-024-52311-2",
+    "10.1038/s41587-024-02390-8"
+  ],
+  "articles": [
+    {
+      "doi": "10.1038/s41467-024-52311-2",
+      "title": "Global mapping of antimicrobial resistance genes and transmission dynamics across human, animal, and environmental microbiomes",
+      "post_file": "2026-11-20-novo-pipeline-metagenomica-resistoma-global.md",
+      "published_at": "2026-11-20"
+    },
+    {
+      "doi": "10.1038/s41587-024-02390-8",
+      "title": "Large-scale structural modeling of macromolecular interactomes via deep learning architectures",
+      "post_file": "2026-11-22-alphafold-predicao-complexos-moleculares-interatoma.md",
+      "published_at": "2026-11-22"
+    }
+  ]
+}

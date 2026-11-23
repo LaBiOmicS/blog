@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<div class="wrap article-wrap">
+  <a class="back-link" href="{{ site.baseurl }}/">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Voltar para o Radar Científico
+  </a>
+
+  <header class="article-header">
+    <div class="post-badges">
+      {% if page.journal %}
+        <span class="badge badge-journal">{{ page.journal }}</span>
+      {% endif %}
+      {% if page.categories %}
+        {% for cat in page.categories %}
+          <span class="badge badge-category">{{ cat }}</span>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <h1 class="article-title">{{ page.title }}</h1>
+
+    <div class="article-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        📅 {{ page.date | date: "%d/%m/%Y" }}
+      </time>
+      <span>⏱️ {{ page.content | number_of_words | divided_by: 180 | plus: 1 }} min de leitura</span>
+      <span>🤖 Síntese LaBiOmicS AI</span>
+    </div>
+  </header>
+
+  <!-- Ficha Técnica do Artigo Original -->
+  {% if page.doi or page.original_title %}
+  <div class="paper-card">
+    <h3>Artigo Original em Destaque</h3>
+    <div class="paper-card-title">{{ page.original_title | default: page.title }}</div>
+    
+    <div class="paper-card-details">
+      {% if page.authors %}
+        <div><strong>Autores:</strong> {{ page.authors }}</div>
+      {% endif %}
+      {% if page.journal %}
+        <div><strong>Periódico:</strong> {{ page.journal }}{% if page.year %} ({{ page.year }}){% endif %}</div>
+      {% endif %}
+      {% if page.doi %}
+        <div><strong>DOI:</strong> <code>{{ page.doi }}</code></div>
+      {% endif %}
+    </div>
+
+    {% if page.original_url %}
+      <a class="btn-doi" href="{{ page.original_url }}" target="_blank" rel="noopener noreferrer">
+        Acessar Artigo Original na Íntegra (DOI) ↗
+      </a>
+    {% elsif page.doi %}
+      <a class="btn-doi" href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener noreferrer">
+        Acessar Artigo Original na Íntegra (DOI) ↗
+      </a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Conteúdo do Artigo -->
+  <article class="article-content">
+    {{ content }}
+  </article>
+
+  <!-- Tags -->
+  {% if page.tags %}
+  <div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+    <span style="font-size: 0.84rem; color: var(--muted); font-weight: 600;">Tags:</span>
+    {% for tag in page.tags %}
+      <span class="badge badge-category">#{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Aviso de Curadoria Científica -->
+  <div class="article-disclaimer">
+    ℹ️ <strong>Transparência e Integridade Científica:</strong> Este resumo em português foi estruturado automaticamente por inteligência artificial com base nos metadados, resumo e dados do artigo original revisado por pares. O objetivo é a divulgação científica e atualização rápida da comunidade. Sempre consulte o trabalho original através do DOI oficial para metodologia detalhada e citações formais.
+  </div>
+</div>

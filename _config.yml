@@ -1,0 +1,42 @@
+# Configuração do Jekyll para o Blog do LaBiOmicS
+# Compatível nativamente com GitHub Pages
+
+title: "LaBiOmicS · Radar Científico"
+tagline: "Divulgação de artigos de alto impacto em bioinformática e ciências ômicas"
+description: "Sínteses automatizadas em português dos principais artigos científicos em genômica, metagenômica, transcriptômica, biologia estrutural e inteligência artificial."
+url: "https://labiomics.github.io"
+baseurl: "" # Deixe vazio se for a raiz, ou "/blog" se for uma subpasta do site principal
+
+# Idioma e fuso horário
+lang: "pt-BR"
+timezone: "America/Sao_Paulo"
+
+# Permalinks elegantes para os posts
+permalink: /blog/:year/:month/:day/:title/
+
+# Links institucionais
+lab_url: "https://labiomics.github.io/"
+github_org: "https://github.com/LaBiOmicS"
+contact_email: "contato@labiomics.com.br"
+
+# Formatação e Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Plugins suportados nativamente pelo GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Arquivos e pastas a ignorar no build do site
+exclude:
+  - scripts/
+  - data/
+  - .github/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE

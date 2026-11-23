@@ -1,0 +1,28 @@
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="{{ site.baseurl }}/" aria-label="LaBiOmicS Radar Científico">
+      <img class="brand-logo" src="{{ site.baseurl }}/assets/images/logo-labiomics.png" alt="LaBiOmicS">
+      <span class="brand-badge">Radar Científico</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a class="nav-item active" href="{{ site.baseurl }}/">Blog</a>
+      <a class="nav-item" href="{{ site.lab_url }}" target="_blank" rel="noopener">Laboratório ↗</a>
+      <a class="nav-item" href="{{ site.github_org }}" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="btn-icon" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        <!-- Ícone Sol (Modo Claro) -->
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <!-- Ícone Lua (Modo Escuro) -->
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
