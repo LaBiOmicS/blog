@@ -3,6 +3,10 @@ name: Deploy Jekyll no GitHub Pages
 on:
   push:
     branches: ["main"]
+  workflow_run:
+    workflows: ["Curador Científico Diário LaBiOmicS"]
+    types:
+      - completed
   workflow_dispatch:
 
 # Permissões necessárias para publicar no GitHub Pages
