@@ -1,39 +1,34 @@
 <footer class="site-footer">
-  <div class="wrap footer-inner">
+  <div class="wrap footer-wrap">
     <div class="footer-brand">
-      <img src="{{ site.baseurl }}/assets/images/logo-labiomics.png" alt="LaBiOmicS" style="height: 36px; width: auto; opacity: 0.9;">
-      <p>
-        <strong>LaBiOmicS</strong> — Laboratório de Bioinformática e Ciências Ômicas.<br>
-        Pesquisa computacional de ponta em genômica, metagenômica, transcriptômica e inteligência artificial aberta.
-      </p>
+      <a href="{{ site.lab_url }}" target="_blank" rel="noopener">
+        <img class="footer-logo" src="{{ site.baseurl }}/assets/images/logo-labiomics.png" width="280" height="83" alt="LaBiOmicS · Laboratório de Bioinformática e Ciências Ômicas">
+      </a>
+      <div class="footer-desc">
+        <strong>LaBiOmicS</strong> · Laboratório de Bioinformática e Ciências Ômicas
+        <p class="footer-meta">Núcleo Integrado de Biotecnologia (NIB) | Núcleo de Pesquisas Tecnológicas (NPT)<br>Universidade de Mogi das Cruzes, SP</p>
+        <p class="footer-quote">“Desvendando a vida, um dado de cada vez.”</p>
+      </div>
     </div>
 
-    <div class="footer-links">
-      <div>
-        <strong>Recursos</strong>
-        <ul style="list-style: none; padding: 0; margin: 8px 0 0; line-height: 1.8;">
-          <li><a href="{{ site.lab_url }}">Portal do Laboratório</a></li>
-          <li><a href="{{ site.github_org }}">Repositórios Abertos</a></li>
-          <li><a href="{{ site.lab_url }}#pesquisa">Linhas de Pesquisa</a></li>
-        </ul>
-      </div>
-      <div>
-        <strong>Ciência Aberta</strong>
-        <ul style="list-style: none; padding: 0; margin: 8px 0 0; line-height: 1.8;">
-          <li><a href="https://github.com/LaBiOmicS/aramas">Projeto Aramas</a></li>
-          <li><a href="https://github.com/LaBiOmicS/metaLncRNA">metaLncRNA</a></li>
-          <li><a href="https://github.com/LaBiOmicS/HumaninFinder">HumaninFinder</a></li>
-        </ul>
-      </div>
+    <div class="footer-nav">
+      <a class="footer-btn" href="{{ site.lab_url }}" target="_blank" rel="noopener">
+        <span>Acessar Página Oficial do Laboratório</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
     </div>
   </div>
 
   <div class="wrap footer-bottom">
     <div>
-      © {{ 'now' | date: "%Y" }} LaBiOmicS. Conteúdo sob licença aberta.
+      © {{ 'now' | date: "%Y" }} LaBiOmicS. Todos os direitos reservados.
     </div>
-    <div style="font-size: 0.78rem; opacity: 0.85;">
-      Curadoria científica e síntese automatizada com GitHub Actions & IA.
+    <div class="footer-notice">
+      Blog automatizado de divulgação científica e bioinformática com curadoria de artigos de alto impacto via IA.
     </div>
   </div>
 </footer>

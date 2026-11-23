@@ -5,30 +5,31 @@ layout: default
 <section class="hero">
   <div class="wrap">
     <div class="hero-pill">
-      Radar Científico LaBiOmicS · Atualização Contínua
+      Radar Científico LaBiOmicS · Atualização Diária
     </div>
     <h1 class="hero-title">
       Fronteiras da Bioinformática & Ciências Ômicas
     </h1>
     <p class="hero-desc">
-      Artigos de alto impacto selecionados de periódicos líderes mundiais, analisados e sintetizados em português com foco em inovações metodológicas e biológicas.
+      Artigos de alto impacto selecionados dos principais periódicos do mundo e sintetizados em português, destacando inovações metodológicas, pipelines e algoritmos alinhados às linhas de pesquisa do laboratório.
     </p>
 
-    <!-- Barra de Filtros Rápidos -->
-    <div class="filter-bar">
+    <!-- Barra de Filtros das 6 Linhas do Laboratório -->
+    <div class="filter-bar" role="tablist" aria-label="Filtro por Linhas de Pesquisa">
       <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="metagenomica">Metagenômica</button>
-      <button class="filter-btn" data-filter="genomica">Genômica</button>
+      <button class="filter-btn" data-filter="bioinformatica">Bioinformática</button>
+      <button class="filter-btn" data-filter="metagenomica">Metagenômica & Resistoma</button>
+      <button class="filter-btn" data-filter="genomica">Genômica & Mitogenômica</button>
       <button class="filter-btn" data-filter="transcriptomica">Transcriptômica</button>
-      <button class="filter-btn" data-filter="ia">IA & Bioinformática</button>
-      <button class="filter-btn" data-filter="microbioma">Microbioma</button>
+      <button class="filter-btn" data-filter="microbioma">Microbioma & Viroma</button>
+      <button class="filter-btn" data-filter="ia-em-biologia">IA & Computação</button>
     </div>
   </div>
 </section>
 
-<section class="wrap">
+<section class="wrap blog-section">
   <div class="posts-grid" id="posts-container">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
       <article class="post-card" 
                data-categories="{{ post.categories | join: ' ' }}" 
                data-tags="{{ post.tags | join: ' ' }}">
@@ -37,9 +38,9 @@ layout: default
             {% if post.journal %}
               <span class="badge badge-journal">{{ post.journal }}</span>
             {% endif %}
-            {% if post.categories.first %}
-              <span class="badge badge-category">{{ post.categories.first }}</span>
-            {% endif %}
+            {% for cat in post.categories %}
+              <span class="badge badge-category">{{ cat }}</span>
+            {% endfor %}
           </div>
           
           <h2 class="post-card-title">
@@ -47,21 +48,70 @@ layout: default
           </h2>
           
           <p class="post-card-excerpt">
-            {{ post.excerpt | strip_html | strip_newlines | truncate: 170 }}
+            {{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}
           </p>
         </div>
 
         <div class="post-card-meta">
-          <span>📅 {{ post.date | date: "%d/%m/%Y" }}</span>
-          <a class="post-card-link" href="{{ post.url | relative_url }}">
-            Ler síntese →
+          <div class="post-date-read">
+            <span>📅 {{ post.date | date: "%d/%m/%Y" }}</span>
+            <span class="dot-sep">·</span>
+            <span>⏱️ {{ post.content | number_of_words | divided_by: 180 | plus: 1 }} min</span>
+          </div>
+          <a class="post-card-link" href="{{ post.url | relative_url }}" aria-label="Ler síntese de {{ post.title }}">
+            Ler síntese <span>→</span>
           </a>
         </div>
       </article>
     {% else %}
-      <div style="grid-column: 1 / -1; padding: 48px 0; text-align: center; color: var(--muted);">
-        <p style="font-size: 1.1rem;">Nenhum artigo publicado ainda. O robô curador começará a publicar em breve!</p>
+      <div class="empty-state">
+        <p>Nenhum artigo encontrado nesta categoria.</p>
       </div>
     {% endfor %}
   </div>
+
+  <!-- Paginação de 10 em 10 Artigos -->
+  {% if paginator.total_pages > 1 %}
+  <nav class="pagination" aria-label="Navegação entre páginas">
+    {% if paginator.previous_page %}
+      <a class="page-btn page-prev" href="{{ paginator.previous_page_path | relative_url }}">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Mais Recentes
+      </a>
+    {% else %}
+      <span class="page-btn disabled">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Mais Recentes
+      </span>
+    {% endif %}
+
+    <div class="page-status">
+      Página <strong>{{ paginator.page }}</strong> de <strong>{{ paginator.total_pages }}</strong>
+    </div>
+
+    {% if paginator.next_page %}
+      <a class="page-btn page-next" href="{{ paginator.next_page_path | relative_url }}">
+        Anteriores
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    {% else %}
+      <span class="page-btn disabled">
+        Anteriores
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </span>
+    {% endif %}
+  </nav>
+  {% endif %}
 </section>

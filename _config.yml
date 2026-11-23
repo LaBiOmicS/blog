@@ -25,8 +25,13 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+# Paginação de 10 em 10 artigos
+paginate: 10
+paginate_path: "/page:num/"
+
 # Plugins suportados nativamente pelo GitHub Pages
 plugins:
+  - jekyll-paginate
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap

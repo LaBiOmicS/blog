@@ -1,26 +1,31 @@
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="{{ site.baseurl }}/" aria-label="LaBiOmicS Radar Científico">
-      <img class="brand-logo" src="{{ site.baseurl }}/assets/images/logo-labiomics.png" alt="LaBiOmicS">
-      <span class="brand-badge">Radar Científico</span>
+    <a class="brand" href="{{ site.baseurl }}/" aria-label="LaBiOmicS Blog Científico">
+      <img class="logo" src="{{ site.baseurl }}/assets/images/logo-labiomics.png" width="338" height="100" alt="LaBiOmicS · Laboratório de Bioinformática e Ciências Ômicas">
     </a>
 
     <nav class="nav-links" aria-label="Navegação principal">
       <a class="nav-item active" href="{{ site.baseurl }}/">Blog</a>
-      <a class="nav-item" href="{{ site.lab_url }}" target="_blank" rel="noopener">Laboratório ↗</a>
-      <a class="nav-item" href="{{ site.github_org }}" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="nav-item lab-link" href="{{ site.lab_url }}" target="_blank" rel="noopener">
+        <span>Laboratório</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
     </nav>
 
     <div class="topbar-actions">
-      <button class="btn-icon" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
-        <!-- Ícone Sol (Modo Claro) -->
-        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
+        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </g>
         </svg>
-        <!-- Ícone Lua (Modo Escuro) -->
-        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
         </svg>
       </button>
     </div>
