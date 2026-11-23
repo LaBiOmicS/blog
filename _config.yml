@@ -12,7 +12,7 @@ lang: "pt-BR"
 timezone: "America/Sao_Paulo"
 
 # Permalinks elegantes para os posts
-permalink: /blog/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
 
 # Links institucionais
 lab_url: "https://labiomics.github.io/"
