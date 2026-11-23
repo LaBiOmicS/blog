@@ -31,7 +31,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: "gemini-2.5-flash"
         run: |
-          python scripts/curator.py --limit 5 --days 30
+          python scripts/curator.py --limit 10 --days 60
 
       - name: Commit e Push do Novo Artigo
         run: |

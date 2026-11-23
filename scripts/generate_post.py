@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """
-generate_post.py - Geração automatizada do artigo de divulgação científica via IA.
+generate_post.py - Geração de sínteses científicas com foco protagonista em Bioinformática.
 
-Utiliza a API do Google Gemini (ou fallback) para gerar um post curto, elegante
-e tecnicamente preciso em português com base nos metadados e no abstract do artigo.
+Conectado estritamente com as 6 Linhas de Pesquisa do LaBiOmicS:
+1. Genômica Estrutural e Funcional & Mitogenômica
+2. Transcriptômica e Expressão Gênica
+3. Microbioma e Viroma
+4. Metagenômica e Resistoma
+5. Biologia Computacional e Inteligência Artificial
+6. Reprodutibilidade e Workflows
 """
 
 import os
@@ -14,24 +19,34 @@ from typing import Dict, Any, Optional
 
 DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
+SYSTEM_PROMPT = """Você é o Redator Científico Especialista em Bioinformática e Ciências Ômicas do LaBiOmicS (Laboratório de Bioinformática e Ciências Ômicas - Menegidio Lab).
 
-SYSTEM_PROMPT = """Você é o Redator Científico Especialista do LaBiOmicS (Laboratório de Bioinformática e Ciências Ômicas).
-Sua missão é ler os metadados e o abstract de um artigo científico de alto impacto e escrever uma síntese de divulgação científica em Português do Brasil (pt-BR) de alto nível para o blog do laboratório.
+ATENÇÃO AO PRINCÍPIO FUNDAMENTAL DO LABORATÓRIO:
+A BIOINFORMÁTICA E A BIOLOGIA COMPUTACIONAL SÃO O ELO PRINCIPAL DE TODAS AS ANÁLISES.
+O foco dos artigos deve SEMPRE destacar algoritmos, pipelines, modelos estatísticos/de IA, montagem, anotação, benchmarking, bancos de dados, ferramentas de código aberto e processamento em larga escala de dados ômicos.
+
+O LaBiOmicS atua especificamente em 6 Linhas de Pesquisa:
+1. Genômica Estrutural e Funcional & Mitogenômica (montagem de genomas nucleares/mitocondriais, anotação gênica, variação)
+2. Transcriptômica e Expressão Gênica (RNA-Seq, redes de co-expressão, splicing alternativo, lncRNAs, biomarcadores)
+3. Microbioma e Viroma (bacterioma, micobioma, viroma, ecologia microbiana, interação hospedeiro-microrganismo)
+4. Metagenômica e Resistoma (sequenciamento shotgun, genes de resistência a antimicrobianos - ARGs, elementos genéticos móveis - MGEs, mineração de genomas/MAGs)
+5. Biologia Computacional e IA (desenvolvimento de algoritmos e ferramentas, machine learning, deep learning, AlphaFold, modelos de linguagem de proteínas)
+6. Reprodutibilidade e Replicabilidade (benchmarking, workflows em Nextflow/Snakemake, contêineres Docker/Singularity, ciência aberta)
 
 Diretrizes de Redação:
-1. Tom: Cientificamente rigoroso, moderno, acessível a pesquisadores e estudantes de pós-graduação em bioinformática, biotecnologia e ciências biológicas. Não use clichês vazios de IA ("em um mundo onde...", "um divisor de águas revolucionário").
-2. Título em Português: Crie um título claro, cativante e preciso (NÃO faça tradução literal do inglês, mas resuma a descoberta ou inovação principal).
-3. Estrutura do Texto:
-   - Parágrafo de Abertura: Qual o problema biológico, de saúde ou metodológico abordado?
-   - Subseção '### Principais Inovações Metodológicas': Detalhe a estratégia experimental ou computacional (sequenciamento shotgun, single-cell, algoritmos, aprendizado profundo, bancos de dados, etc.).
-   - Subseção '### Por que isso é relevante para o LaBiOmicS e para a Área?': O impacto prático da descoberta e como dialoga com as pesquisas de genômica, metagenômica e bioinformática aberta.
-4. Categorias: Escolha 1 a 2 categorias principais entre: [metagenomica, genomica, transcriptomica, ia, bioinformatica, microbioma].
-5. Tags: 3 a 5 tags técnicas em letras minúsculas (ex: resistoma, alphafold, rna-seq, docker).
+1. Linguagem: Português do Brasil (pt-BR) técnico, fluído e acadêmico de alto nível, adequado para bioinformatas, biólogos moleculares e cientistas da computação.
+2. Título em Português: Atraente, técnico e preciso, evidenciando o avanço computacional ou genômico/metagenômico.
+3. Estrutura do Texto (Markdown):
+   - Parágrafo de Introdução: Qual é a lacuna biológica ou o gargalo computacional que motivou o estudo?
+   - Subseção '### O Pipeline, Algoritmo ou Abordagem Computacional': Explique a metodologia bioinformática (ferramentas utilizadas, bancos de dados, modelagem, algoritmos, validação, fluxo de dados).
+   - Subseção '### Conexão com as Linhas de Pesquisa do LaBiOmicS': Explique como este trabalho dialoga diretamente com as linhas do laboratório (cite explicitamente a linha correspondente, como Metagenômica/Resistoma, Transcriptômica/lncRNAs, Mitogenômica ou Biologia Computacional/IA).
+4. Categorias: Escolha 1 ou 2 entre: [bioinformatica, metagenomica, genomica, transcriptomica, microbioma, ia-em-biologia, reprodutibilidade].
+5. Tags: 3 a 5 tags técnicas em minúsculas (ex: shotgun-sequencing, nextflow, alphafold, lncrna, resistome, mags, mitogenoma).
 
 Responda ESTRITAMENTE em formato JSON com as chaves:
 {
-  "title": "Título em português",
-  "categories": ["categoria1", "categoria2"],
+  "title": "Título em português focado no avanço bioinformático/ômico",
+  "categories": ["bioinformatica", "metagenomica"],
   "tags": ["tag1", "tag2", "tag3"],
   "body_markdown": "Texto completo em Markdown formatado..."
 }
@@ -40,7 +55,7 @@ Responda ESTRITAMENTE em formato JSON com as chaves:
 
 def generate_post_with_gemini(paper: Dict[str, Any], api_key: Optional[str] = None) -> Dict[str, Any]:
     """
-    Chama a API do Google Gemini para gerar o conteúdo do post.
+    Chama a API do Google Gemini para gerar o conteúdo do post com foco em bioinformática.
     """
     api_key = api_key or os.getenv("GEMINI_API_KEY")
     
@@ -72,7 +87,7 @@ Resumo (Abstract):
             }
         ],
         "generationConfig": {
-            "temperature": 0.4,
+            "temperature": 0.35,
             "responseMimeType": "application/json"
         }
     }
@@ -96,48 +111,43 @@ Resumo (Abstract):
 
 def generate_post_fallback(paper: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Gera um rascunho de post sem depender da chave de API da IA (útil para testes locais).
+    Gera um rascunho de post caso a API esteja indisponível.
     """
-    title = f"Avanços Recentes em {paper.get('journal')}: {paper.get('title')[:80]}..."
+    title = f"Bioinformática em Foco: {paper.get('title')[:85]}..."
     
-    # Classificação heurística simples
     abstract_lower = paper.get('abstract', '').lower()
-    categories = []
+    categories = ["bioinformatica"]
     if "metagenom" in abstract_lower or "microbiom" in abstract_lower:
         categories.append("metagenomica")
-    if "transcriptom" in abstract_lower or "rna-seq" in abstract_lower:
+    elif "transcriptom" in abstract_lower or "rna-seq" in abstract_lower:
         categories.append("transcriptomica")
-    if "structure" in abstract_lower or "alphafold" in abstract_lower or "protein" in abstract_lower:
-        categories.append("bioinformatica")
-    if "machine learning" in abstract_lower or "deep learning" in abstract_lower:
-        categories.append("ia")
-    if not categories:
-        categories = ["bioinformatica"]
+    elif "learning" in abstract_lower or "algorithm" in abstract_lower or "model" in abstract_lower:
+        categories.append("ia-em-biologia")
 
-    body = f"""O periódico **{paper.get('journal')}** publicou recentemente um estudo de grande impacto intitulado *"{paper.get('title')}"*, desenvolvido por {paper.get('authors')}.
+    body = f"""O periódico **{paper.get('journal')}** publicou um estudo de alto impacto centrado em inovação computacional e ciências ômicas: *"{paper.get('title')}"*, por {paper.get('authors')}.
 
-### Contexto do Estudo
+### O Desafio e o Contexto Computacional
 {paper.get('abstract')}
 
-### Principais Inovações Metodológicas
-- Investigação detalhada combinando abordagens experimentais avançadas com modelagem computacional.
-- Estratégia de análise voltada para desvendar sistemas biológicos complexos e interação molecular.
+### O Pipeline, Algoritmo ou Abordagem Computacional
+- Desenvolvimento de metodologia bioinformática avançada para integração de dados biológicos em larga escala.
+- Estruturação de fluxos de análise com ênfase em reprodutibilidade, validação e mineração preditiva.
 
-### Relevância para a Comunidade LaBiOmicS
-O trabalho dialoga diretamente com as linhas de pesquisa do laboratório, reforçando a importância do uso de pipelines reprodutíveis e análise de grandes volumes de dados ômicos para gerar novas hipóteses biológicas.
+### Conexão com as Linhas de Pesquisa do LaBiOmicS
+O artigo conecta-se fortemente com a atuação do laboratório em biologia computacional e análise de dados ômicos massivos, ressaltando a importância do desenvolvimento de algoritmos robustos e ciência aberta.
 """
 
     return {
         "title": title,
         "categories": categories,
-        "tags": ["ciencias-omicas", "bioinformatica", "artigo-recente"],
+        "tags": ["bioinformatica", "ciencias-omicas", "computational-biology"],
         "body_markdown": body
     }
 
 
 def format_jekyll_markdown(paper: Dict[str, Any], ai_output: Dict[str, Any], date_str: str) -> str:
     """
-    Formata o artigo final no padrão Markdown com Frontmatter aceito nativamente pelo Jekyll.
+    Formata o artigo final no padrão Markdown com Frontmatter Jekyll.
     """
     title = ai_output.get("title", paper.get("title", "Novo Artigo")).replace('"', '\\"')
     categories = ai_output.get("categories", ["bioinformatica"])

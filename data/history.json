@@ -2,11 +2,16 @@
   "processed_dois": [
     "10.1038/s41467-024-52311-2",
     "10.1038/s41587-024-02390-8",
-    "10.1038/s41467-026-78910-1",
-    "10.1038/s41467-026-79637-9",
-    "10.1038/s41467-026-79750-9",
-    "10.1038/s41467-026-79632-0",
-    "10.1093/ismejo/wrag277"
+    "10.1093/nar/gkag1174",
+    "10.1093/nar/gkag1245",
+    "10.1093/nar/gkag1254",
+    "10.1093/nar/gkag1261",
+    "10.1093/nar/gkag1235",
+    "10.1093/bioinformatics/btag847",
+    "10.1093/bioinformatics/btag848",
+    "10.1371/journal.pcbi.1014945",
+    "10.1371/journal.pcbi.1014974",
+    "10.1371/journal.pcbi.1014064"
   ],
   "articles": [
     {
@@ -22,33 +27,63 @@
       "published_at": "2026-11-22"
     },
     {
-      "doi": "10.1038/s41467-026-78910-1",
-      "title": "Local niche-derived immunosuppressive CXCR2+ cells impair antiviral immunity",
-      "post_file": "2026-11-23-celulas-cxcr2-imunossupressoras-de-nicho-local-desvendando-a.md",
+      "doi": "10.1093/nar/gkag1174",
+      "title": "BGC Atlas v2: biosynthetic gene clusters with taxonomic and environmental context at scale",
+      "post_file": "2026-11-23-bgc-atlas-v2-escalando-a-descoberta-de-clusters-de-genes-bio.md",
       "published_at": "2026-11-23"
     },
     {
-      "doi": "10.1038/s41467-026-79637-9",
-      "title": "σ-complex stabilization shapes enzymatic C-glycosylation and restricts the scope of natural C-glycosides",
-      "post_file": "2026-11-23-desvendando-a-c-glicosilacao-enzimatica-como-a-estabilizacao.md",
+      "doi": "10.1093/nar/gkag1245",
+      "title": "VEuPathDB: 2026 update on data, tools, and infrastructure for eukaryotic pathogens, vectors, and hosts",
+      "post_file": "2026-11-23-veupathdb-2026-otimizacao-bioinformatica-com-ia-e-nextflow-p.md",
       "published_at": "2026-11-23"
     },
     {
-      "doi": "10.1038/s41467-026-79750-9",
-      "title": "Biosynthesis of iboga alkaloids",
-      "post_file": "2026-11-23-desvendando-a-biossintese-de-alcaloides-de-iboga-novas-enzim.md",
+      "doi": "10.1093/nar/gkag1254",
+      "title": "miRTarBase 11.0: an evidence-centred resource for experimentally supported microRNA-target interactions",
+      "post_file": "2026-11-23-mirtarbase-110-uma-plataforma-bioinformatica-integrativa-e-a.md",
       "published_at": "2026-11-23"
     },
     {
-      "doi": "10.1038/s41467-026-79632-0",
-      "title": "Disaccharide production in marine cold seeps links dissolved organic carbon to anaerobic oxidation of methane",
-      "post_file": "2026-11-23-dissacarideos-como-chave-molecular-na-oxidacao-anaerobia-de.md",
+      "doi": "10.1093/nar/gkag1261",
+      "title": "MIsoTEx: a mammalian transcript-isoform classification framework and database for exploring tissue distribution, expression stability, and abundance patterns",
+      "post_file": "2026-11-23-misotex-um-framework-bioinformatico-para-classificacao-e-ana.md",
       "published_at": "2026-11-23"
     },
     {
-      "doi": "10.1093/ismejo/wrag277",
-      "title": "Whole-soil microbial inoculation accelerates post-fire soil recovery in a mixed conifer forest",
-      "post_file": "2026-11-23-microbioma-do-solo-uma-estrategia-para-acelerar-a-recuperaca.md",
+      "doi": "10.1093/nar/gkag1235",
+      "title": "MGnify analyses in 2027: enhancing the depth and breadth of analyses across metabarcoding, unassembled metagenomes, and assembled datasets",
+      "post_file": "2026-11-23-mgnify-2027-elevando-a-analise-metagenomica-com-pipelines-ne.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag847",
+      "title": "ARCADE: Controllable Codon Design from Foundation Models via Activation Engineering",
+      "post_file": "2026-11-23-arcade-engenharia-de-ativacao-e-modelos-de-linguagem-genomic.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag848",
+      "title": "MaldiSuite: a Python ecosystem for MALDI-TOF spectral processing and analysis in antimicrobial resistance research",
+      "post_file": "2026-11-23-maldisuite-unificando-a-bioinformatica-e-a-inteligencia-arti.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014945",
+      "title": "Rollout models of human planning with exact action probabilities",
+      "post_file": "2026-11-23-rosette-desvendando-o-planejamento-humano-com-um-modelo-comp.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014974",
+      "title": "A hybrid mixture approach for clustering and characterizing biomedical data",
+      "post_file": "2026-11-23-desvendando-a-heterogeneidade-de-dados-omicos-de-alta-dimens.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014064",
+      "title": "Pupil dynamics reflect uncertainty-driven adjustments of probability learning",
+      "post_file": "2026-11-23-desvendando-a-aprendizagem-probabilistica-com-modelos-bayesi.md",
       "published_at": "2026-11-23"
     }
   ]

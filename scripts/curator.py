@@ -55,7 +55,7 @@ def save_history(history: dict) -> None:
         json.dump(history, f, indent=2, ensure_ascii=False)
 
 
-def run_curator(limit: int = 5, dry_run: bool = False, days_back: int = 30) -> None:
+def run_curator(limit: int = 10, dry_run: bool = False, days_back: int = 60) -> None:
     """Executa a rotina de curadoria diária."""
     print("=" * 60)
     print(f"🤖 LaBiOmicS Radar Bot - Iniciando Curadoria [{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
@@ -124,7 +124,7 @@ def run_curator(limit: int = 5, dry_run: bool = False, days_back: int = 30) -> N
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Curador Diário do LaBiOmicS Blog")
-    parser.add_argument("--limit", type=int, default=5, help="Número máximo de posts a gerar (padrão: 5)")
+    parser.add_argument("--limit", type=int, default=10, help="Número máximo de posts a gerar (padrão: 10)")
     parser.add_argument("--dry-run", action="store_true", help="Executa sem salvar arquivos em disco")
     parser.add_argument("--days", type=int, default=30, help="Janela de dias para busca (padrão: 30)")
 
