@@ -11,7 +11,16 @@
     "10.1093/bioinformatics/btag848",
     "10.1371/journal.pcbi.1014945",
     "10.1371/journal.pcbi.1014974",
-    "10.1371/journal.pcbi.1014064"
+    "10.1371/journal.pcbi.1014064",
+    "10.1093/ismejo/wrag291",
+    "10.1093/ismejo/wrag277",
+    "10.1093/bioinformatics/btag844",
+    "10.1093/bioinformatics/btag841",
+    "10.1093/nar/gkag1214",
+    "10.1093/nar/gkag1144",
+    "10.1093/nar/gkag1168",
+    "10.1093/nar/gkag1173",
+    "10.1038/s41592-026-03345-x"
   ],
   "articles": [
     {
@@ -84,6 +93,60 @@
       "doi": "10.1371/journal.pcbi.1014064",
       "title": "Pupil dynamics reflect uncertainty-driven adjustments of probability learning",
       "post_file": "2026-11-23-desvendando-a-aprendizagem-probabilistica-com-modelos-bayesi.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/ismejo/wrag291",
+      "title": "Design and application of a salt-alkali-resistant root synthetic microbial community for Medicago sativa L. using machine learning",
+      "post_file": "2026-11-23-desvendando-interacoes-microbianas-para-comunidades-sintetic.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/ismejo/wrag277",
+      "title": "Whole-soil microbial inoculation accelerates post-fire soil recovery in a mixed conifer forest",
+      "post_file": "2026-11-23-desvendando-a-resiliencia-microbiana-do-solo-pos-incendio-um.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag844",
+      "title": "pyGENIE: A Python library for programmatic access and mutational analysis of AACR Project GENIE",
+      "post_file": "2026-11-23-pygenie-otimizando-a-analise-mutacional-programatica-de-dado.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag841",
+      "title": "RNAcomp2D: a web tool to execute multiple methods and visually compare predictions of RNA secondary structure",
+      "post_file": "2026-11-23-rnacomp2d-unificacao-e-benchmarking-de-modelos-computacionai.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/nar/gkag1214",
+      "title": "FusionGDB 3.0: integrating breakpoints, generating personalized sequences, and inferring tumorigenic scenarios for human fusion genes",
+      "post_file": "2026-11-23-desvendando-genes-de-fusao-tumorogenicos-a-abordagem-integra.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/nar/gkag1144",
+      "title": "canSAR 2026-an update to the public drug discovery knowledgebase",
+      "post_file": "2026-11-23-bioinformatica-em-foco-cansar-2026-an-update-to-the-public-d.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/nar/gkag1168",
+      "title": "Europe PMC in 2026",
+      "post_file": "2026-11-23-europe-pmc-2026-a-evolucao-computacional-na-descoberta-cient.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/nar/gkag1173",
+      "title": "DriverDBv5: a multi-omics integration database for cancer driver gene research",
+      "post_file": "2026-11-23-bioinformatica-em-foco-driverdbv5-a-multi-omics-integration.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1038/s41592-026-03345-x",
+      "title": "Scalable electron tomography for connectomics",
+      "post_file": "2026-11-23-bioinformatica-em-foco-scalable-electron-tomography-for-conn.md",
       "published_at": "2026-11-23"
     }
   ]
