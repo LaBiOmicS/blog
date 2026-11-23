@@ -1,7 +1,12 @@
 {
   "processed_dois": [
     "10.1038/s41467-024-52311-2",
-    "10.1038/s41587-024-02390-8"
+    "10.1038/s41587-024-02390-8",
+    "10.1038/s41467-026-78910-1",
+    "10.1038/s41467-026-79637-9",
+    "10.1038/s41467-026-79750-9",
+    "10.1038/s41467-026-79632-0",
+    "10.1093/ismejo/wrag277"
   ],
   "articles": [
     {
@@ -15,6 +20,36 @@
       "title": "Large-scale structural modeling of macromolecular interactomes via deep learning architectures",
       "post_file": "2026-11-22-alphafold-predicao-complexos-moleculares-interatoma.md",
       "published_at": "2026-11-22"
+    },
+    {
+      "doi": "10.1038/s41467-026-78910-1",
+      "title": "Local niche-derived immunosuppressive CXCR2+ cells impair antiviral immunity",
+      "post_file": "2026-11-23-celulas-cxcr2-imunossupressoras-de-nicho-local-desvendando-a.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1038/s41467-026-79637-9",
+      "title": "σ-complex stabilization shapes enzymatic C-glycosylation and restricts the scope of natural C-glycosides",
+      "post_file": "2026-11-23-desvendando-a-c-glicosilacao-enzimatica-como-a-estabilizacao.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1038/s41467-026-79750-9",
+      "title": "Biosynthesis of iboga alkaloids",
+      "post_file": "2026-11-23-desvendando-a-biossintese-de-alcaloides-de-iboga-novas-enzim.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1038/s41467-026-79632-0",
+      "title": "Disaccharide production in marine cold seeps links dissolved organic carbon to anaerobic oxidation of methane",
+      "post_file": "2026-11-23-dissacarideos-como-chave-molecular-na-oxidacao-anaerobia-de.md",
+      "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/ismejo/wrag277",
+      "title": "Whole-soil microbial inoculation accelerates post-fire soil recovery in a mixed conifer forest",
+      "post_file": "2026-11-23-microbioma-do-solo-uma-estrategia-para-acelerar-a-recuperaca.md",
+      "published_at": "2026-11-23"
     }
   ]
 }

@@ -64,8 +64,8 @@ def clean_html(raw_html: str) -> str:
 def fetch_recent_papers_europe_pmc(
     topics: Optional[List[str]] = None,
     journals: Optional[List[str]] = None,
-    days_back: int = 15,
-    page_size: int = 25
+    days_back: int = 45,
+    page_size: int = 50
 ) -> List[Dict[str, Any]]:
     """
     Busca artigos no Europe PMC usando queries estruturadas em periódicos de topo.

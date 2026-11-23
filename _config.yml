@@ -5,7 +5,7 @@ title: "LaBiOmicS · Radar Científico"
 tagline: "Divulgação de artigos de alto impacto em bioinformática e ciências ômicas"
 description: "Sínteses automatizadas em português dos principais artigos científicos em genômica, metagenômica, transcriptômica, biologia estrutural e inteligência artificial."
 url: "https://labiomics.github.io"
-baseurl: "" # Deixe vazio se for a raiz, ou "/blog" se for uma subpasta do site principal
+baseurl: "/blog" # Hospedado em https://labiomics.github.io/blog
 
 # Idioma e fuso horário
 lang: "pt-BR"
