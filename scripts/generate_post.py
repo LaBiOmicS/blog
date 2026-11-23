@@ -147,9 +147,17 @@ O artigo conecta-se fortemente com a atuação do laboratório em biologia compu
 
 def format_jekyll_markdown(paper: Dict[str, Any], ai_output: Dict[str, Any], date_str: str) -> str:
     """
-    Formata o artigo final no padrão Markdown com Frontmatter Jekyll.
+    Formata o artigo final no padrão Markdown com Frontmatter Jekyll compatível com Python 3.11+.
     """
-    title = ai_output.get("title", paper.get("title", "Novo Artigo")).replace('"', '\\"')
+    raw_title = ai_output.get("title", paper.get("title", "Novo Artigo"))
+    title = raw_title.replace('"', '').strip()
+    orig_title = paper.get("title", "").replace('"', '').strip()
+    authors = paper.get("authors", "").replace('"', '').strip()
+    journal = paper.get("journal", "").replace('"', '').strip()
+    doi = paper.get("doi", "").strip()
+    url = paper.get("url", "").strip()
+    year = paper.get("year", 2026)
+
     categories = ai_output.get("categories", ["bioinformatica"])
     tags = ai_output.get("tags", ["bioinformatica"])
     body = ai_output.get("body_markdown", "").strip()
@@ -160,12 +168,12 @@ title: "{title}"
 date: {date_str} 08:00:00 -0300
 categories: {json.dumps(categories)}
 tags: {json.dumps(tags)}
-journal: "{paper.get('journal', '')}"
-doi: "{paper.get('doi', '')}"
-original_url: "{paper.get('url', '')}"
-original_title: "{paper.get('title', '').replace('"', '\\"')}"
-authors: "{paper.get('authors', '').replace('"', '\\"')}"
-year: {paper.get('year', 2026)}
+journal: "{journal}"
+doi: "{doi}"
+original_url: "{url}"
+original_title: "{orig_title}"
+authors: "{authors}"
+year: {year}
 ---
 
 {body}
