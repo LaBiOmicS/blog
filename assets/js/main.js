@@ -41,17 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Motor de Busca de Artigos em Tempo Real
-  const searchInput = document.getElementById("blog-search-input");
+  // 3. Motor de Busca de Artigos e Filtros (Padrão Oficial do LaBiOmicS)
+  const searchInput = document.getElementById("q");
   const postsContainer = document.getElementById("posts-container");
   const paginationNav = document.getElementById("pagination-nav");
-  const searchFeedback = document.getElementById("search-feedback");
+  const searchMsg = document.getElementById("search-msg");
   const filterBtns = document.querySelectorAll(".filter-btn");
 
   let allPostsIndex = null;
   let defaultPostsHTML = postsContainer ? postsContainer.innerHTML : "";
 
-  // Atalho de teclado '/' para focar a busca
+  // Atalho de teclado '/' para focar a busca e 'Esc' para limpar
   document.addEventListener("keydown", (e) => {
     if (e.key === "/" && document.activeElement !== searchInput && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
       e.preventDefault();
@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
       postsContainer.innerHTML = `
         <div class="empty-state" style="grid-column: 1 / -1; padding: 48px 0; text-align: center;">
           <p style="font-size: 1.1rem; color: var(--muted); margin-bottom: 12px;">Nenhum artigo encontrado para "<strong>${escapeHtml(query)}</strong>".</p>
-          <button type="button" class="btn-clear-search" id="btn-clear-search">Limpar busca</button>
         </div>
       `;
     } else {
@@ -112,25 +111,19 @@ document.addEventListener("DOMContentLoaded", () => {
       `).join("");
     }
 
-    if (searchFeedback) {
-      searchFeedback.style.display = "flex";
-      searchFeedback.innerHTML = `
-        <span>Mostrando <strong>${results.length}</strong> ${results.length === 1 ? 'artigo encontrado' : 'artigos encontrados'} para "<strong>${escapeHtml(query)}</strong>"</span>
-        <button type="button" class="btn-clear-search-link" id="btn-clear-search-link">✕ Limpar</button>
+    if (searchMsg) {
+      searchMsg.hidden = false;
+      searchMsg.innerHTML = `
+        <span><strong>${results.length}</strong> ${results.length === 1 ? 'artigo encontrado' : 'artigos encontrados'} para "<strong>${escapeHtml(query)}</strong>"</span>
+        <button type="button" class="search-msg-clear" id="search-msg-clear">✕ Limpar busca</button>
       `;
 
-      const clearBtn = document.getElementById("btn-clear-search-link");
+      const clearBtn = document.getElementById("search-msg-clear");
       if (clearBtn) clearBtn.addEventListener("click", () => {
         if (searchInput) searchInput.value = "";
         restoreDefaultView();
       });
     }
-
-    const clearBtnEmpty = document.getElementById("btn-clear-search");
-    if (clearBtnEmpty) clearBtnEmpty.addEventListener("click", () => {
-      if (searchInput) searchInput.value = "";
-      restoreDefaultView();
-    });
 
     if (paginationNav) {
       paginationNav.style.display = "none";
@@ -140,8 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const restoreDefaultView = () => {
     if (postsContainer) postsContainer.innerHTML = defaultPostsHTML;
     if (paginationNav) paginationNav.style.display = "flex";
-    if (searchFeedback) searchFeedback.style.display = "none";
-    attachCardListeners();
+    if (searchMsg) searchMsg.hidden = true;
+    attachFilterListeners();
   };
 
   const escapeHtml = (str) => {
@@ -150,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   if (searchInput) {
-    // Pré-carrega índice no foco
     searchInput.addEventListener("focus", () => { loadSearchIndex(); });
 
     searchInput.addEventListener("input", async (e) => {
@@ -177,11 +169,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 4. Filtro por botões de categorias
-  const attachCardListeners = () => {
+  // 4. Filtro por Linhas de Pesquisa
+  const attachFilterListeners = () => {
     const cards = document.querySelectorAll(".post-card");
     filterBtns.forEach(btn => {
       btn.addEventListener("click", () => {
+        if (searchInput) searchInput.value = "";
+        if (searchMsg) searchMsg.hidden = true;
+        if (paginationNav) paginationNav.style.display = "flex";
+
         filterBtns.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
 
@@ -199,5 +195,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  attachCardListeners();
+  attachFilterListeners();
 });

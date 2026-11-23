@@ -345,32 +345,25 @@ code, pre, .mono { font-family: 'IBM Plex Mono', monospace; }
   margin: 0;
 }
 
-/* ---------- Toolbar: Busca e Filtros das Linhas ---------- */
+/* ---------- Toolbar (Busca e Filtros fiéis ao site do laboratório) ---------- */
 .toolbar {
-  margin-top: 32px;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-@media (min-width: 900px) {
-  .toolbar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 32px;
 }
 
 .search {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex: 1 1 300px;
-  max-width: 440px;
+  gap: 8px;
+  flex: 1 1 260px;
+  max-width: 380px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 2px 12px 2px 14px;
+  border-radius: 11px;
+  padding: 0 10px 0 12px;
   color: var(--muted);
   box-shadow: var(--shadow);
   transition: border-color .2s, box-shadow .2s;
@@ -379,6 +372,7 @@ code, pre, .mono { font-family: 'IBM Plex Mono', monospace; }
 .search svg {
   flex: none;
   stroke: var(--muted);
+  transition: stroke .2s;
 }
 
 .search input {
@@ -386,7 +380,7 @@ code, pre, .mono { font-family: 'IBM Plex Mono', monospace; }
   background: transparent;
   color: var(--text);
   font: inherit;
-  font-size: 0.94rem;
+  font-size: 14px;
   padding: 10px 0;
   width: 100%;
   outline: none;
@@ -407,65 +401,78 @@ code, pre, .mono { font-family: 'IBM Plex Mono', monospace; }
 }
 
 .search kbd {
-  font: 600 11px/1.4 "IBM Plex Mono", monospace;
+  font: 12px "IBM Plex Mono", monospace;
   border: 1px solid var(--border);
   border-radius: 5px;
-  padding: 2px 6px;
+  padding: 0 6px;
   color: var(--muted);
   background: var(--surface-2);
 }
 
-.search-feedback {
+.filters {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filters button {
+  position: relative;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  white-space: nowrap;
+  transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s;
+}
+
+.filters button:hover {
+  color: var(--text);
+  border-color: var(--border-focus);
+}
+
+.filters button.active {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  box-shadow: 0 2px 10px rgba(109, 40, 217, .25);
+}
+
+.search-msg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--accent-soft);
+  margin: -16px 0 24px;
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--surface-2);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);
-  border-radius: var(--radius-sm);
-  padding: 12px 18px;
-  margin-bottom: 24px;
-  font-size: 0.92rem;
-  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 14px;
 }
 
-.btn-clear-search-link {
-  background: transparent;
-  border: 0;
+.search-msg[hidden] {
+  display: none !important;
+}
+
+.search-msg-clear {
+  background: none;
+  border: none;
   color: var(--accent);
+  font: inherit;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  padding: 4px 8px;
-  font-size: 0.88rem;
-  border-radius: 6px;
+  padding: 2px 6px;
 }
 
-.btn-clear-search-link:hover {
-  background: var(--surface);
-}
-
-.btn-clear-search {
-  background: var(--accent);
-  color: var(--accent-ink);
-  border: 0;
-  border-radius: var(--radius-sm);
-  padding: 8px 18px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: opacity .2s;
-}
-
-.btn-clear-search:hover {
-  opacity: .9;
-}
-
-/* ---------- Barra de Filtros das 6 Linhas ---------- */
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
+.search-msg-clear:hover {
+  text-decoration: underline;
 }
 
 .filter-btn {
