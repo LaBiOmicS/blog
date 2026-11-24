@@ -20,7 +20,17 @@
     "10.1093/nar/gkag1144",
     "10.1093/nar/gkag1168",
     "10.1093/nar/gkag1173",
-    "10.1038/s41592-026-03345-x"
+    "10.1038/s41592-026-03345-x",
+    "10.1093/nar/gkag1207",
+    "10.1093/nar/gkag1229",
+    "10.1093/bioinformatics/btag851",
+    "10.1093/bioinformatics/btag857",
+    "10.1186/s12864-026-13564-3",
+    "10.1038/s41587-026-03284-0",
+    "10.1371/journal.pcbi.1014932",
+    "10.1371/journal.pcbi.1014929",
+    "10.1371/journal.pcbi.1014990",
+    "10.1371/journal.pcbi.1014985"
   ],
   "articles": [
     {
@@ -148,6 +158,66 @@
       "title": "Scalable electron tomography for connectomics",
       "post_file": "2026-11-23-bioinformatica-em-foco-scalable-electron-tomography-for-conn.md",
       "published_at": "2026-11-23"
+    },
+    {
+      "doi": "10.1093/nar/gkag1207",
+      "title": "Beyond the rat: over a quarter century of disease model integration at the Rat Genome Database",
+      "post_file": "2026-11-24-avancos-bioinformaticos-na-rat-genome-database-rgd-integraca.md",
+      "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1093/nar/gkag1229",
+      "title": "OMA orthology in 2027: orthology, ancestral gene repertoires, and comparative genomics at scale",
+      "post_file": "2026-11-24-desvendando-a-evolucao-genomica-em-larga-escala-o-papel-cent.md",
+      "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag851",
+      "title": "SpatialMuSC: Spatial Graph-Conditioned Diffusion Refinement for Robust Spatial Multi-Omics Integration",
+      "post_file": "2026-11-24-spatialmusc-uma-abordagem-inovadora-com-refinamento-por-difu.md",
+      "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag857",
+      "title": "GLAND: Resolving small and non-continuous tissue domains via a hybrid attention mechanism",
+      "post_file": "2026-11-24-gland-desvendando-a-heterogeneidade-tecidual-espacial-com-de.md",
+      "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1186/s12864-026-13564-3",
+      "title": "The lncRNA hTAPAS within the epigenetic landscape of hTERT transcription and splicing",
+      "post_file": "2026-11-24-bioinformatica-em-foco-the-lncrna-htapas-within-the-epigenet.md",
+      "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1038/s41587-026-03284-0",
+      "title": "A unified framework for scalable differential testing for spatial omics",
+      "post_file": "2026-11-24-spotglm-e-sparrow-um-framework-bioinformatico-unificado-para.md",
+      "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014932",
+      "title": "AlphaFold models of host-pathogen interactions elucidate the prevalence and structural modes of molecular mimicry",
+      "post_file": "2026-11-24-alphafold-na-vanguarda-modelagem-estrutural-em-larga-escala.md",
+      "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014929",
+      "title": "Large-scale analysis of AlphaFold structures reveals organism-specific physicochemical signatures",
+      "post_file": "2026-11-24-analise-computacional-em-larga-escala-de-estruturas-alphafol.md",
+      "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014990",
+      "title": "Statistical analysis of residue contact energies reveals folding determinants of ion channels",
+      "post_file": "2026-11-24-desvendando-determinantes-estruturais-de-canais-ionicos-via.md",
+      "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014985",
+      "title": "Multi-model forecasting of respiratory disease activity in Germany during the 2024-2025 season",
+      "post_file": "2026-11-24-previsao-multi-modelo-de-doencas-respiratorias-um-sistema-co.md",
+      "published_at": "2026-11-24"
     }
   ]
 }
