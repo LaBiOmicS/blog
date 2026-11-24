@@ -2,8 +2,8 @@ name: Curador Científico Diário LaBiOmicS
 
 on:
   schedule:
-    # Roda diariamente às 10:00 UTC (07:00 no horário de Brasília)
-    - cron: '0 10 * * *'
+    # Roda diariamente às 10:17 UTC (07:17 no horário de Brasília); minuto fora do :00 evita atrasos/descartes do agendador
+    - cron: '17 10 * * *'
   workflow_dispatch: # Permite disparo manual com 1 clique pela aba Actions do GitHub
 
 permissions:
