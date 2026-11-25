@@ -30,7 +30,17 @@
     "10.1371/journal.pcbi.1014932",
     "10.1371/journal.pcbi.1014929",
     "10.1371/journal.pcbi.1014990",
-    "10.1371/journal.pcbi.1014985"
+    "10.1371/journal.pcbi.1014985",
+    "10.1093/bioinformatics/btag864",
+    "10.1093/bioinformatics/btag858",
+    "10.1093/bioinformatics/btag859",
+    "10.1093/bioinformatics/btag862",
+    "10.1186/s12859-026-06746-z",
+    "10.1371/journal.pcbi.1014994",
+    "10.1371/journal.pcbi.1014968",
+    "10.1371/journal.pcbi.1014307",
+    "10.1371/journal.pcbi.1014970",
+    "10.1093/gigascience/giag104"
   ],
   "articles": [
     {
@@ -218,6 +228,66 @@
       "title": "Multi-model forecasting of respiratory disease activity in Germany during the 2024-2025 season",
       "post_file": "2026-11-24-previsao-multi-modelo-de-doencas-respiratorias-um-sistema-co.md",
       "published_at": "2026-11-24"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag864",
+      "title": "Pathway-Transformer: Integrating Transcript Variants and Biological Pathways for Cancer Phenotype Prediction",
+      "post_file": "2026-11-25-pathway-transformer-uma-arquitetura-de-transformer-para-prev.md",
+      "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag858",
+      "title": "Nucleic acid 3D structure search and alignment with GTalign",
+      "post_file": "2026-11-25-gtalign-uma-ferramenta-bioinformatica-de-alto-desempenho-par.md",
+      "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag859",
+      "title": "HARP-RPA: Interface-Aware HeteroPairFormer for Protein-RNA Binding Affinity Prediction",
+      "post_file": "2026-11-25-harp-rpa-uma-abordagem-de-deep-learning-baseada-em-interface.md",
+      "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag862",
+      "title": "ReactifpTM: an accessible reimplementation of actifpTM",
+      "post_file": "2026-11-25-reactifptm-uma-ferramenta-bioinformatica-para-avaliacao-robu.md",
+      "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1186/s12859-026-06746-z",
+      "title": "Integrating MeSH semantics and knowledge graph topology for structure-agnostic drug-drug interaction prediction",
+      "post_file": "2026-11-25-predicao-estrutura-agnostica-de-interacoes-medicamentosas-a.md",
+      "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014994",
+      "title": "Beyond profiles: Supervised repeat annotation using protein embeddings",
+      "post_file": "2026-11-25-tread-anotacao-de-repeticoes-proteicas-com-aprendizado-super.md",
+      "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014968",
+      "title": "CoEVFold suite: User friendly pipelines to visually represent protein coevolution",
+      "post_file": "2026-11-25-bioinformatica-em-foco-coevfold-suite-user-friendly-pipeline.md",
+      "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014307",
+      "title": "TRAFIKK: Systematic prediction and mechanistic interpretation of anticancer drug synergies",
+      "post_file": "2026-11-25-bioinformatica-em-foco-trafikk-systematic-prediction-and-mec.md",
+      "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014970",
+      "title": "Vascular modelling of peripheral ischaemic disease response",
+      "post_file": "2026-11-25-bioinformatica-em-foco-vascular-modelling-of-peripheral-isch.md",
+      "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1093/gigascience/giag104",
+      "title": "M-SCAN: Multi-Scale Constrained Analysis of Metabolic Networks for Genome-Scale Flux Inference in Pan-Cancer Cohorts",
+      "post_file": "2026-11-25-bioinformatica-em-foco-m-scan-multi-scale-constrained-analys.md",
+      "published_at": "2026-11-25"
     }
   ]
 }
