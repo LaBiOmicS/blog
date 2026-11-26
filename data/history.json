@@ -40,7 +40,17 @@
     "10.1371/journal.pcbi.1014968",
     "10.1371/journal.pcbi.1014307",
     "10.1371/journal.pcbi.1014970",
-    "10.1093/gigascience/giag104"
+    "10.1093/gigascience/giag104",
+    "10.1093/nar/gkag1273",
+    "10.1093/nar/gkag1250",
+    "10.1093/nar/gkag1248",
+    "10.1093/nar/gkag1238",
+    "10.1093/bioinformatics/btag872",
+    "10.1371/journal.pcbi.1014485",
+    "10.1371/journal.pcbi.1014969",
+    "10.1371/journal.pcbi.1014494",
+    "10.1371/journal.pcbi.1014944",
+    "10.1371/journal.pcbi.1014979"
   ],
   "articles": [
     {
@@ -288,6 +298,66 @@
       "title": "M-SCAN: Multi-Scale Constrained Analysis of Metabolic Networks for Genome-Scale Flux Inference in Pan-Cancer Cohorts",
       "post_file": "2026-11-25-bioinformatica-em-foco-m-scan-multi-scale-constrained-analys.md",
       "published_at": "2026-11-25"
+    },
+    {
+      "doi": "10.1093/nar/gkag1273",
+      "title": "GTRD 2026: expanded content and resources for deep learning",
+      "post_file": "2026-11-26-bioinformatica-em-foco-gtrd-2026-expanded-content-and-resour.md",
+      "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1093/nar/gkag1250",
+      "title": "OrthoDB and BUSCO update: broader phylogenomic sampling, deeper homology searches, and AI-agent support",
+      "post_file": "2026-11-26-orthodb-e-busco-6-refinamento-filogenomico-e-homologia-profu.md",
+      "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1093/nar/gkag1248",
+      "title": "TFRegDB v2.0: an integrated database of human transcription factor effector domains",
+      "post_file": "2026-11-26-tfregdb-v20-curadoria-computacional-e-integracao-omica-de-do.md",
+      "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1093/nar/gkag1238",
+      "title": "The molecular phenotypes of null alleles in cells (MorPhiC) data resource",
+      "post_file": "2026-11-26-morphic-uma-plataforma-bioinformatica-integrativa-para-a-ana.md",
+      "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1093/bioinformatics/btag872",
+      "title": "pdb_cpp: a C ++ library with Python bindings for fast parsing, interface analysis and docking evaluation of macromolecular complexes",
+      "post_file": "2026-11-26-acelerando-a-bioinformatica-estrutural-pdb_cpp-uma-bibliotec.md",
+      "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014485",
+      "title": "A structure-derived contact-network responsiveness atlas of human proteins",
+      "post_file": "2026-11-26-cnr-um-atlas-computacional-da-responsividade-de-redes-de-con.md",
+      "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014969",
+      "title": "Protein sequence domain annotation using a language model",
+      "post_file": "2026-11-26-modelos-de-linguagem-e-decodificacao-probabilistica-psalm-re.md",
+      "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014494",
+      "title": "mirCCC: Repression-aware graph learning for miRNA-mediated cell-cell communication inference",
+      "post_file": "2026-11-26-mirccc-aprendizado-de-grafos-e-analise-de-scrna-seq-para-dec.md",
+      "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014944",
+      "title": "Systematic clustering alignment and feature characterization for single-cell omics using ACE-OF-Clust",
+      "post_file": "2026-11-26-desvendando-a-heterogeneidade-celular-ace-of-clust-e-o-alinh.md",
+      "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014979",
+      "title": "Generating scRNA-seq data from bulk RNA-seq using a Gaussian mixture variational autoencoder",
+      "post_file": "2026-11-26-bulk2sc-desvendando-a-resolucao-de-celula-unica-em-dados-rna.md",
+      "published_at": "2026-11-26"
     }
   ]
 }
