@@ -50,7 +50,12 @@
     "10.1371/journal.pcbi.1014969",
     "10.1371/journal.pcbi.1014494",
     "10.1371/journal.pcbi.1014944",
-    "10.1371/journal.pcbi.1014979"
+    "10.1371/journal.pcbi.1014979",
+    "10.1038/s41592-026-03317-1",
+    "10.1126/science.aee7240",
+    "10.1371/journal.pcbi.1014995",
+    "10.1371/journal.pcbi.1014965",
+    "10.1093/ismejo/wrag294"
   ],
   "articles": [
     {
@@ -358,6 +363,36 @@
       "title": "Generating scRNA-seq data from bulk RNA-seq using a Gaussian mixture variational autoencoder",
       "post_file": "2026-11-26-bulk2sc-desvendando-a-resolucao-de-celula-unica-em-dados-rna.md",
       "published_at": "2026-11-26"
+    },
+    {
+      "doi": "10.1038/s41592-026-03317-1",
+      "title": "Large-scale quantitative assessment of tissue preparation and staining conditions for robust multiplexed imaging of FFPE tissue samples",
+      "post_file": "2026-11-27-benchmarking-computacional-para-otimizacao-e-reprodutibilida.md",
+      "published_at": "2026-11-27"
+    },
+    {
+      "doi": "10.1126/science.aee7240",
+      "title": "Shared patterns of human milk composition link mammary gland function to infant growth",
+      "post_file": "2026-11-27-integracao-multiomica-e-modelagem-preditiva-por-machine-lear.md",
+      "published_at": "2026-11-27"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014995",
+      "title": "A discovery of emergent drivers pipeline uncovers parameter hierarchies in spatiotemporal agent-based tumor models",
+      "post_file": "2026-11-27-bioinformatica-na-oncologia-um-pipeline-computacional-inovad.md",
+      "published_at": "2026-11-27"
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1014965",
+      "title": "Biophysically grounded deep learning improves protein-protein ΔΔG prediction",
+      "post_file": "2026-11-27-protbff-aprimorando-a-previsao-de-g-em-interacoes-proteina-p.md",
+      "published_at": "2026-11-27"
+    },
+    {
+      "doi": "10.1093/ismejo/wrag294",
+      "title": "Community-level bisphenol A biotransformation in an activated sludge microcosm",
+      "post_file": "2026-11-27-modelagem-metabolica-e-omicas-integradas-revelam-a-dinamica.md",
+      "published_at": "2026-11-27"
     }
   ]
 }
